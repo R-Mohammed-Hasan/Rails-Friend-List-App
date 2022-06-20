@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>School Management</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="./../../assets/stylesheets/bootstrap.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'articles/header'%>
+    
+    <div class="container"> 
+    <br>
+    <% if notice %>
+      <%= render "layouts/alerts" %> 
+    <% end %>
+    <br>
+        <%= yield %>
+    </div>
+
+    <%= javascript_pack_tag 'bootstrap.min.js' %>
+
+  </body>
+</html>
