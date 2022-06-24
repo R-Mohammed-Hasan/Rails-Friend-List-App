@@ -1,5 +1,5 @@
 {
-  "name": "practice",
+  "name": "school-management",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",

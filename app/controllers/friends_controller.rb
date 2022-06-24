@@ -10,6 +10,8 @@ class FriendsController < ApplicationController
 
   before_action :authenticate_user!, except: %i(index show)
 
+  before_action :correct_user, only: %i(edit update destroy)
+
 
 
   # GET /friends or /friends.json
@@ -143,6 +145,18 @@ class FriendsController < ApplicationController
       format.json { head :no_content }
 
     end
+
+  end
+
+
+
+  def correct_user
+
+    @friends = current_user.friends.find_by(id: params[:id])
+
+
+
+    redirect_to friends_path, notice: "Not authorized to edit this friend " if @friends.nil?
 
   end
 
